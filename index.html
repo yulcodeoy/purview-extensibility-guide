@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <title>Purview Extensibility Catalog — Mind Map</title>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
 <!-- Fraunces variable (display heads). Per the warm-editorial
      recipe: serif on display heads only; body stays system sans. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1913,7 +1914,7 @@ html:not([data-build="external"]) .sc-h1 {
 }
 
 /* =========================================================================
-   WARM-EDITORIAL TYPOGRAPHY — INTERNAL ONLY
+   WARM-EDITORIAL TYPOGRAPHY
    Per the gorgeous-visuals "warm-editorial" recipe (confirmed-loved):
    Fraunces variable serif on display heads ONLY (page H1, scenario H1,
    intake/prep modal H2s). Body, eyebrows, captions, card titles, API rows
@@ -2234,7 +2235,7 @@ header .header-actions {
 <main id="view"></main>
 
 <footer>
-  Last updated 2026-05-15 · Click anything to drill in · API names link to Microsoft Learn · partner attribution is illustrative and sourced from a mix of public Microsoft Learn pages and internal Microsoft assessments — verify before external citation
+  Last updated 2026-05-15 · Click anything to drill in · API names link to Microsoft Learn · partner attribution is illustrative — verify each surface against the linked Microsoft Learn page before external citation
 </footer>
 
 <details id="not-extensible-panel" style="margin: 0 16px 24px; padding: 12px 16px; border: 1px solid var(--cp-border); border-radius: 6px; background: var(--cp-surface-soft); font-size: 13px; color: var(--cp-text-soft);">
@@ -2371,8 +2372,8 @@ const o="http://www.w3.org/1999/xlink",l={show:o,actuate:o,href:o};function h(t,
 <script>
 // ----------------------------------------------------------------------------
 // BUILD MODE — single source of truth for internal vs external rendering.
-// 'internal'  → full content, named partner attribution shown
-// 'external'  → partner attribution stripped, public-disclaimer banner shown
+// 'internal'  → full content with attributions
+// 'external'  → public-safe redacted view
 // To generate the external file: run build-external.ps1 (flips this constant
 // in a copy and writes external.html). Edit ONLY this file as the source.
 // ----------------------------------------------------------------------------
@@ -4788,7 +4789,7 @@ function rerender() {
 }
 
 // ============================================================================
-// PREP FOR A PARTNER CALL — intake modal + report generator (internal only)
+// PREP FOR A PARTNER CALL — intake modal + report generator
 // ============================================================================
 const prepState = {
   partner: '',
