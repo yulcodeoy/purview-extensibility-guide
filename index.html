@@ -4336,7 +4336,7 @@ function renderScenarios() {
     const card = el('div', { class: 'card', dataset: { scid: sc.id }, onclick: () => location.hash = `#/scenario/${sc.id}` },
       el('div', { class: 'card-head' },
         el('h3', {}, sc.label)),
-      el('p', { class: 'narrative' }, sc.narrative),
+      el('p', { class: 'narrative', html: sc.narrative }),
       el('div', { class: 'meta-row' },
         el('span', {}, ''),
         el('span', { html: `<b>${apiCount}</b> surface${apiCount===1?'':'s'} · skill <span class="effort-pill ${eff}" title="${(SKILL_DESCRIPTIONS[eff]||'').replace(/"/g,'&quot;')}">${SKILL_LABELS[eff]||eff}</span>` })),
@@ -5279,7 +5279,7 @@ function buildReportHTML() {
 
   const archCtx = scenarios.length === 0 ? '' : `
     <h2>Architectural context</h2>
-    ${scenarios.map(sc => `<p><b>${escHtml(sc.label)}.</b> ${escHtml(sc.narrative)}</p>`).join('')}
+    ${scenarios.map(sc => `<p><b>${escHtml(sc.label)}.</b> ${sc.narrative}</p>`).join('')}
   `;
 
   const pathsHtml = sortedPaths.length === 0 ? '' : `
